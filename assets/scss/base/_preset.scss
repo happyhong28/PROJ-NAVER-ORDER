@@ -1,0 +1,47 @@
+.screen-out {
+    position: absolute;
+    width: 0;
+    height: 0;
+    line-height: 0;
+    overflow: hidden;
+    text-indent: -9999px;
+}
+
+
+//가로 스크롤
+//이렇게 클래스 형식으로 선언해놓고 사용할 수도 있고,
+//@mixin 을 사용해서 선언해둘 수도 있다.
+.scroll-x { 
+    overflow-x : auto;
+    overflow-y : hidden;
+
+    //normal은 가로 범위를 넘어가는것이 있으면
+    //자연스럽게 밑으로 떨어지게 하는것인데
+    //nowrap은 그런거 상관없이 뚫고 나가게 하는 것이다.
+    white-space: nowrap;
+    
+    //pc보다는 모바일에서 터치로 스크롤링이 가능할 때 주로 사용한다.
+    -webkit-overflow-scrolling: touch;
+    -ms-overflow-style : none;
+    scrollbar-width : none;
+    &::-webkit-scrollbar{
+        display: none;
+    }
+}
+
+body.scroll-off {
+    overflow : hidden;
+    -ms-touch-action: none;
+    touch-action: none;
+}
+
+
+// 아래와 같이 하나의 클래스가 하나의 기능을 담고 있는 것을
+// functional css 라고 부른다.
+.fw700 {
+    font-weight: 700;
+}
+
+.color-point {
+    color : $point-color;
+}
