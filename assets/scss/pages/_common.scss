@@ -1,0 +1,59 @@
+.container {
+    //최소 높이가 각 기기의 전체가 되도록하기 위해서...
+    //vh는 뷰포트 하이트라는 의미!
+    min-height: 100vh;
+
+    //매번 이걸 숫자값으로 계산해서 넣어줄 수 없으므로,
+    //변수에 값을 담아서 그 변수들 끼리 더해서 적용되도록 한다.
+    
+    &:not(.order){
+        //order 페이지가 아닌 경우에만 패딩값을 적용 시켜준다.
+        padding-top: $place-header-height + $place-tab-height;
+        padding-bottom :  $order-box-area-height;
+    }
+
+
+    background-color: $booking-color-border151;
+}
+
+
+
+//어떤 컨텐츠가 일정 길이 이상으로 넘어가도 더이상 늘어나지 않도록
+//하고 싶을 때 공통적으로 사용될 수 있는 클래스이다.  
+.common-inner {
+    //본문이 가운데 정렬된다.
+    margin : 0 auto;
+
+    //720px 이상으로는 늘어나지 않는다.
+    max-width : 720px;
+
+    // background-color: red;
+}
+
+//인기메뉴 뱃지
+.badge-popular {
+    display: inline-block;
+    padding : 0 5px;
+    border-radius : 10px;
+    font-size: 11px;
+    line-height: 16px;
+    font-weight: 700;
+    background-color: #ff61a7;
+    color: #fff;
+}
+
+
+
+.dimmed-layer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 9999;
+
+    &.light {
+        background-color: rgba(0,0,0,0.4);
+    }
+  }
